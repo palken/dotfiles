@@ -18,6 +18,12 @@ shopt -s histreedit # allow re-editing failed history substitutions
 shopt -s hostcomplete # attempt hostname expansion when @ is at the beginning of a word
 shopt -s nocaseglob # pathname expansion will be treated as case-insensitive
 
+# Adding support for git completion from homebrew
+if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+        . /usr/local/etc/bash_completion.d/git-completion.bash
+fi
+
+
 # Colorized prompt with git branch indication
 PS1='\u@\[\033[1;34m\]\h\[\033[1;36m\] \w\[\033[01;32m\]$(__git_ps1 " (%s)")\[\033[0m\] $ '
 
@@ -62,7 +68,7 @@ fi
 
 export PAGER=less
 export MANPAGER=less
-export EDITOR="emacs -nw"
+export EDITOR="vim"
 export VISUAL=$EDITOR
 export ALTERNATE_EDITOR="" # this makes emacsclient start the emacs daemon
 export HISTSIZE=10000
