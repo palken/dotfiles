@@ -68,7 +68,7 @@ fi
 
 export PAGER=less
 export MANPAGER=less
-export EDITOR="vim"
+export EDITOR="subl -w"
 export VISUAL=$EDITOR
 export ALTERNATE_EDITOR="" # this makes emacsclient start the emacs daemon
 export HISTSIZE=10000

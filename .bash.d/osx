@@ -20,7 +20,7 @@ then
     export NODE_PATH=/usr/local/lib/node
 fi
 
-export PATH=/usr/local/bin:/usr/local/Cellar/python/2.7.1/bin:$PATH:/usr/local/sbin
+export PATH=/usr/local/bin:/usr/local/Cellar/python/2.7.1/bin:$PATH:/usr/local/sbin:~/bin
 
 if [[ -e $HOME/.cabal/bin ]]
 then
@@ -41,3 +41,7 @@ alias ls='ls -G' # add colors (bsd ls)
 function pman () {
     man -t "$@" | open -g -f -a /Applications/Preview.app
 }
+if [[ -e "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" && ! -e ~/bin/subl  ]]
+then
+    ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+fi
